@@ -100,7 +100,6 @@ zero-theme/
 ┃ ┃ ┣ insta-4.jpg
 ┃ ┃ ┣ insta-5.jpg
 ┃ ┃ ┣ insta-6.jpg
-┃ ┃ ┣ light.jpg
 ┃ ┃ ┣ logo-1-dark.png
 ┃ ┃ ┣ logo-1-light.png
 ┃ ┃ ┣ logo-2-dark.png
@@ -142,63 +141,133 @@ zero-theme/
 ┃ ┃ ┣ zero-logo-dark.svg
 ┃ ┃ ┗ zero-logo-light.svg
 ┃ ┣ components/
-┃ ┃ ┗ base/
-┃ ┃   ┣ Avatar.vue
-┃ ┃   ┣ AvatarCard.vue
-┃ ┃   ┣ Body.vue
-┃ ┃   ┣ Btn.vue
-┃ ┃   ┣ Divider.vue
-┃ ┃   ┣ Heading.vue
-┃ ┃   ┣ Icon.vue
-┃ ┃   ┣ Img.vue
-┃ ┃   ┣ InfoCard.vue
-┃ ┃   ┣ Section.vue
-┃ ┃   ┣ SectionHeading.vue
-┃ ┃   ┣ Subheading.vue
-┃ ┃   ┣ Subtitle.vue
-┃ ┃   ┗ Title.vue
+┃ ┃ ┣ base/
+┃ ┃ ┃ ┣ Avatar.vue
+┃ ┃ ┃ ┣ AvatarCard.vue
+┃ ┃ ┃ ┣ Body.vue
+┃ ┃ ┃ ┣ Btn.vue
+┃ ┃ ┃ ┣ BusinessContact.vue
+┃ ┃ ┃ ┣ BusinessInfo.vue
+┃ ┃ ┃ ┣ Card.vue
+┃ ┃ ┃ ┣ CircularProgress.vue
+┃ ┃ ┃ ┣ ContactForm.vue
+┃ ┃ ┃ ┣ Divider.vue
+┃ ┃ ┃ ┣ Heading.vue
+┃ ┃ ┃ ┣ Icon.vue
+┃ ┃ ┃ ┣ Img.vue
+┃ ┃ ┃ ┣ Info.vue
+┃ ┃ ┃ ┣ InfoCard.vue
+┃ ┃ ┃ ┣ ListItem.vue
+┃ ┃ ┃ ┣ Progress.vue
+┃ ┃ ┃ ┣ Section.vue
+┃ ┃ ┃ ┣ SectionHeading.vue
+┃ ┃ ┃ ┣ Subheading.vue
+┃ ┃ ┃ ┣ Subtitle.vue
+┃ ┃ ┃ ┣ TextField.vue
+┃ ┃ ┃ ┣ Textarea.vue
+┃ ┃ ┃ ┗ Title.vue
+┃ ┃ ┣ news/
+┃ ┃ ┃ ┣ Archives.vue
+┃ ┃ ┃ ┣ Author.vue
+┃ ┃ ┃ ┣ Card.vue
+┃ ┃ ┃ ┣ Categories.vue
+┃ ┃ ┃ ┣ Comment.vue
+┃ ┃ ┃ ┣ CommentReply.vue
+┃ ┃ ┃ ┣ Comments.vue
+┃ ┃ ┃ ┣ RecentArticles.vue
+┃ ┃ ┃ ┣ Search.vue
+┃ ┃ ┃ ┣ Share.vue
+┃ ┃ ┃ ┗ Tags.vue
+┃ ┃ ┣ InfoFeatures.vue
+┃ ┃ ┣ Instagram.vue
+┃ ┃ ┣ PriceCard.vue
+┃ ┃ ┗ ProjectCard.vue
 ┃ ┣ layouts/
-┃ ┃ ┗ home/
+┃ ┃  ┗ home/
 ┃ ┃   ┣ AppBar.vue
+┃ ┃   ┣ Drawer.vue
 ┃ ┃   ┣ Footer.vue
 ┃ ┃   ┣ Index.vue
 ┃ ┃   ┣ Settings.vue
+┃ ┃   ┣ SystemBar.vue
 ┃ ┃   ┗ View.vue
-┃ ┣ mixins/
+┣ ┃ mixins/
 ┃ ┃ ┣ heading.js
 ┃ ┃ ┗ load-sections.js
-┃ ┣ plugins/
+┣ ┃ plugins/
 ┃ ┃ ┣ base.js
 ┃ ┃ ┣ index.js
 ┃ ┃ ┣ meta.js
 ┃ ┃ ┣ vuetify.js
 ┃ ┃ ┗ webfontloader.js
-┃ ┣ router/
+┣ ┃ router/
 ┃ ┃ ┗ index.js
-┃ ┣ styles/
+┣ ┃ styles/
 ┃ ┃ ┗ variables.scss
-┃ ┣ views/
+┣ ┃ views/
+┃ ┃ ┣ 404/
+┃ ┃ ┃ ┗ Index.vue
+┃ ┃ ┣ about/
+┃ ┃ ┃ ┗ Index.vue
+┃ ┃ ┣ contact-us/
+┃ ┃ ┃ ┗ Index.vue
+┃ ┃ ┣ gallery/
+┃ ┃ ┃ ┣ Index.vue
+┃ ┃ ┃ ┗ Project.vue
 ┃ ┃ ┣ home/
+┃ ┃ ┃ ┗ Index.vue
+┃ ┃ ┣ marketing/
+┃ ┃ ┃ ┗ Index.vue
+┃ ┃ ┣ news/
+┃ ┃ ┃ ┣ Article.vue
+┃ ┃ ┃ ┗ Index.vue
+┃ ┃ ┣ pricing-plans/
 ┃ ┃ ┃ ┗ Index.vue
 ┃ ┃ ┣ pro/
 ┃ ┃ ┃ ┗ Index.vue
 ┃ ┃ ┣ sections/
+┃ ┃ ┃ ┣ 404.vue
+┃ ┃ ┃ ┣ AboutOurProduct.vue
 ┃ ┃ ┃ ┣ Affiliates.vue
+┃ ┃ ┃ ┣ Article.vue
+┃ ┃ ┃ ┣ ContactUs.vue
+┃ ┃ ┃ ┣ CustomerReviews.vue
 ┃ ┃ ┃ ┣ Features.vue
+┃ ┃ ┃ ┣ Gallery.vue
 ┃ ┃ ┃ ┣ Hero.vue
+┃ ┃ ┃ ┣ HeroAlt.vue
+┃ ┃ ┃ ┣ Info.vue
+┃ ┃ ┃ ┣ InfoAlt.vue
+┃ ┃ ┃ ┣ InfoGraph.vue
+┃ ┃ ┃ ┣ KeepInTouch.vue
+┃ ┃ ┃ ┣ Map.vue
+┃ ┃ ┃ ┣ Marketing.vue
+┃ ┃ ┃ ┣ Mobile.vue
+┃ ┃ ┃ ┣ News.vue
+┃ ┃ ┃ ┣ NewsAlt.vue
+┃ ┃ ┃ ┣ Newsletter.vue
+┃ ┃ ┃ ┣ NewsletterAlt.vue
+┃ ┃ ┃ ┣ PricingPlan.vue
 ┃ ┃ ┃ ┣ ProFeatures.vue
+┃ ┃ ┃ ┣ Project.vue
+┃ ┃ ┃ ┣ Projects.vue
+┃ ┃ ┃ ┣ RecentWorks.vue
+┃ ┃ ┃ ┣ RelatedProjects.vue
 ┃ ┃ ┃ ┣ SocialMedia.vue
 ┃ ┃ ┃ ┗ ThemeFeatures.vue
-┃ ┃ ┗ View.vue
-┃ ┣ App.vue
-┃ ┗ main.js
+┃ ┃ ┗ WeHelpYourSuccess.vue
+┃ ┣ sink/
+┃ ┃ ┣ Callout.vue
+┃ ┃ ┗ Index.vue
+┃ ┗ View.vue
+┃   ┣ App.vue
+┃   ┗ main.js
 ┣ .browserslistrc
-┣ .editorconfig
 ┣ .eslintrc.js
 ┣ .gitignore
-┣ README.md
 ┣ babel.config.js
 ┣ package.json
+┣ README.md
 ┣ vue.config.js
 ┗ yarn.lock
 ```

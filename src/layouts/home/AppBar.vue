@@ -45,24 +45,16 @@
         </v-tabs>
       </div>
 
-      <v-btn
-        class="font-weight-bold ml-6"
-        color="#11c684"
-        dark
-        depressed
-        href="https://store.vuetifyjs.com/products/zero-theme-pro/?ref=vtyd-app-bar"
-        rel="noopener"
-        target="_blank"
-        x-large
-      >
-        Upgrade to PRO
-      </v-btn>
-
       <v-app-bar-nav-icon
         class="hidden-md-and-up"
         @click="drawer = !drawer"
       />
     </v-app-bar>
+
+    <home-drawer
+      v-model="drawer"
+      :items="items"
+    />
   </div>
 </template>
 
@@ -70,11 +62,20 @@
   export default {
     name: 'HomeAppBar',
 
+    components: {
+      HomeDrawer: () => import('./Drawer'),
+    },
+
     data: () => ({
       drawer: null,
       items: [
         'Home',
-        'Pro',
+        'About',
+        'Marketing',
+        'Gallery',
+        'Pricing',
+        'News',
+        'Contact',
       ],
     }),
   }

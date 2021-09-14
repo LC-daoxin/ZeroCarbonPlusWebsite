@@ -94,6 +94,16 @@
           Free Download
         </base-btn>
 
+        <base-btn
+          :to="{ name: 'Sink' }"
+          block
+          color="grey darken-1"
+          dark
+          @click="menu = false"
+        >
+          View All Components
+        </base-btn>
+
         <v-divider class="my-6" />
 
         <base-img

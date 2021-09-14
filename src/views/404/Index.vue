@@ -6,23 +6,24 @@
   import LoadSections from '@/mixins/load-sections'
 
   export default {
-    name: 'Pro',
+    name: 'FourOhFour',
 
-    metaInfo: { title: 'Pro Features' },
+    metaInfo: { title: 'Oops! No Page Found' },
 
     extends: View,
 
     mixins: [
       LoadSections([
-        'hero-alt',
-        'pro-features',
+        '404',
+        'newsletter',
+        'info-alt',
       ]),
     ],
 
     props: {
       id: {
         type: String,
-        default: 'pro',
+        default: 'about',
       },
     },
   }
