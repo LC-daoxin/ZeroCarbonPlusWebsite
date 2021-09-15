@@ -43,7 +43,7 @@
         tile
         max-width="100%"
       >
-        <div class="grow pa-2 body-2">
+        <div class="grow pa-2 text-body-2">
           <div class="d-flex align-center fill-height">
             <span
               class="px-2"

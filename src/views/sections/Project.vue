@@ -60,7 +60,7 @@
             </div>
           </div>
 
-          <div class="caption">
+          <div class="text-caption">
             <base-title
               title="GENERAL INFO"
               space="2"

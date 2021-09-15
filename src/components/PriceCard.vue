@@ -32,7 +32,7 @@
             <sup><small>$</small></sup>{{ price }}
           </base-heading>
 
-          <div class="text-left ml-4 body-2 font-weight-bold mt-1 text-uppercase">
+          <div class="text-left ml-4 text-body-2 font-weight-bold mt-1 text-uppercase">
             PER
             <base-divider
               align="left"

@@ -2,10 +2,10 @@
   <section id="hero">
     <v-img
       :min-height="minHeight"
-      :src="require('@/assets/light.jpg')"
+      :src="require('@/assets/home-bg-2.jpeg')"
       class="white--text"
-      gradient="to bottom, rgba(11, 28, 61, .9), rgba(0,0,0,.4)"
     >
+      <!-- gradient="to bottom, rgba(11, 28, 61, .9), rgba(0,0,0,.1)" -->
       <v-container class="fill-height px-4 py-12">
         <v-responsive
           class="d-flex align-center mx-auto"
@@ -25,7 +25,7 @@
           />
 
           <base-body>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nobis neque aspernatur in quas iure id aliquid, esse debitis, quibusdam mollitia! Quia ea expedita magnam totam, earum omnis et perspiciatis?
+            <span class="white--text">CARBON+ is an online platform for technology exchange. It supports global efforts to address climate change by connecting providers and seekers of environmentally friendly technologies. Through its database, network and acceleration projects, it brings together key players to catalyze green technology innovation and diffusion.</span>
           </base-body>
 
           <div
@@ -63,7 +63,7 @@
 
     computed: {
       minHeight () {
-        const height = this.$vuetify.breakpoint.mdAndUp ? '100vh' : '50vh'
+        const height = this.$vuetify.breakpoint.mdAndUp ? '90vh' : '50vh'
 
         return `calc(${height} - ${this.$vuetify.application.top}px)`
       },

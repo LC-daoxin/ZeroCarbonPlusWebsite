@@ -10,7 +10,7 @@
 
     <v-list-item-content>
       <v-list-item-title
-        class="mb-3 title text-uppercase"
+        class="mb-3 text-h6 text-uppercase"
         v-text="name"
       />
       <base-body

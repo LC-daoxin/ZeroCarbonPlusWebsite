@@ -17,7 +17,7 @@
 
           <v-list-item-content>
             <v-list-item-subtitle
-              class="text-uppercase subtitle-2 font-weight-bold text--primary mb-n2"
+              class="text-uppercase text-subtitle-2 font-weight-bold text--primary mb-n2"
               v-text="article.title"
             />
 

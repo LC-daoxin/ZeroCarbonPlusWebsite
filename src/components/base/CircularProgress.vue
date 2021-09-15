@@ -8,7 +8,7 @@
       size="88"
       width="4"
     >
-      <span class="title font-weight-bold">
+      <span class="text-h6 font-weight-bold">
         <span
           class="text--primary"
           v-text="value"

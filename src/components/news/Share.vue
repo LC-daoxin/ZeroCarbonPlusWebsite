@@ -19,7 +19,7 @@
           </v-icon>
         </v-avatar>
 
-        <span class="d-inline-block body-1 font-weight-bold">Share Post</span>
+        <span class="d-inline-block text-body-1 font-weight-bold">Share Post</span>
       </div>
 
       <v-spacer />

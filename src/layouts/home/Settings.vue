@@ -85,16 +85,6 @@
         <v-divider class="my-6" />
 
         <base-btn
-          block
-          href="https://store.vuetifyjs.com/products/zero-theme-free/?ref=vtyd-settings"
-          class="mb-6"
-          color="accent"
-          target="_blank"
-        >
-          Free Download
-        </base-btn>
-
-        <base-btn
           :to="{ name: 'Sink' }"
           block
           color="grey darken-1"
@@ -106,13 +96,13 @@
 
         <v-divider class="my-6" />
 
-        <base-img
+        <!-- <base-img
           class="mx-auto mb-6"
           src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-light.png"
           width="88"
-        />
+        /> -->
 
-        <div class="text-center">
+        <!-- <div class="text-center">
           <base-btn
             :tile="false"
             :to="{ name: 'Pro' }"
@@ -125,7 +115,7 @@
               mdi-rocket
             </v-icon>
           </base-btn>
-        </div>
+        </div> -->
       </v-card-text>
     </v-card>
   </v-menu>
@@ -141,6 +131,7 @@
           this.$vuetify.theme.currentTheme.primary,
           '#9368e9',
           '#F4511E',
+          '#408734',
         ],
         menu: false,
       }

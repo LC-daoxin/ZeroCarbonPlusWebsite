@@ -13,7 +13,7 @@
 
     <v-list-item-content>
       <v-list-item-title
-        class="title text-uppercase mb-2"
+        class="text-h6 text-uppercase mb-2"
         v-text="name"
       />
 

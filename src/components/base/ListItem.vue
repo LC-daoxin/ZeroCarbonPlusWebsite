@@ -12,7 +12,7 @@
 
     <div
       v-if="text"
-      class="subtitle-1"
+      class="text-subtitle-1"
       v-text="text"
     />
   </div>

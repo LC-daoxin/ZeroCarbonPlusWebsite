@@ -5,18 +5,20 @@
       app
       elevation="1"
       elevate-on-scroll
-      height="80"
+      height="72"
     >
+      {{ $vuetify.breakpoint.name }}
       <base-img
-        :src="require('@/assets/logo.svg')"
-        class="mr-3 hidden-xs-only"
+        :src="require('@/assets/logo_black.png')"
+        class="mr-3 d-sm-none"
         contain
-        max-width="46"
+        max-width="76"
         width="100%"
       />
 
       <base-img
-        :src="require(`@/assets/zero-logo-${$vuetify.theme.isDark ? 'dark' : 'light'}.svg`)"
+        class="mr-3 hidden-xs-only"
+        :src="require(`@/assets/logo_${$vuetify.theme.isDark ? 'white' : 'black'}.png`)"
         contain
         max-width="96"
         width="100%"
@@ -70,7 +72,7 @@
       drawer: null,
       items: [
         'Home',
-        'About',
+        'About Us',
         'Marketing',
         'Gallery',
         'Pricing',
