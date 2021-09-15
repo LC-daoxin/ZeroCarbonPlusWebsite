@@ -23,19 +23,27 @@
         type: [Number, String],
         default: 96,
       },
+      background: String,
     },
 
     computed: {
-      styles () {
+      styles() {
         const space = this.$vuetify.breakpoint.mdAndUp
           ? this.space
           : this.space / 2
-
-        return {
+        const style = {
           ...this.measurableStyles,
           padding: `${space}px 0`,
         }
+        if (this.background) {
+          style.background = `url(${this.background}) no-repeat top left`
+          style.backgroundSize = '2000px 1000px'
+        }
+        return style
       },
+    },
+    mounted() {
+      console.log(this.background)
     },
   }
 </script>

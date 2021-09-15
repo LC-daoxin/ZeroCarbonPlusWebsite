@@ -7,7 +7,6 @@
       elevate-on-scroll
       height="72"
     >
-      {{ $vuetify.breakpoint.name }}
       <base-img
         :src="require('@/assets/logo_black.png')"
         class="mr-3 d-sm-none"
@@ -33,16 +32,15 @@
           background-color="transparent"
         >
           <v-tab
-            v-for="(name, i) in items"
+            v-for="(item, i) in items"
             :key="i"
-            :to="{ name }"
-            :exact="name === 'Home'"
+            :to="item.src"
             :ripple="false"
             class="font-weight-bold"
             min-width="96"
             text
           >
-            {{ name }}
+            {{ item.name }}
           </v-tab>
         </v-tabs>
       </div>
@@ -71,23 +69,40 @@
     data: () => ({
       drawer: null,
       items: [
-        'Home',
-        'About Us',
-        'Marketing',
-        'Gallery',
-        'Pricing',
-        'News',
-        'Contact',
+        {
+          name: 'Home',
+          src: '/',
+        },
+        {
+          name: 'About Us',
+          src: 'About',
+        },
+        {
+          name: 'Database',
+          src: 'Database',
+        },
+        {
+          name: 'Podcasting',
+          src: 'Podcasting',
+        },
+        {
+          name: 'News',
+          src: 'News',
+        },
+        {
+          name: 'Contact',
+          src: 'Contact',
+        },
       ],
     }),
   }
 </script>
 
 <style lang="sass">
-  #home-app-bar
-    .v-tabs-slider
-      max-width: 24px
-      margin: 0 auto
+#home-app-bar
+  .v-tabs-slider
+    max-width: 24px
+    margin: 0 auto
 
     .v-tab
       &::before

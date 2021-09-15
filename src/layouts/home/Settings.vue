@@ -58,7 +58,7 @@
             </template>
           </v-item>
         </v-item-group>
-
+        {{ $vuetify.breakpoint.name }}
         <v-divider class="my-6" />
 
         <base-btn

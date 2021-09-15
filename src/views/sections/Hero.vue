@@ -20,9 +20,18 @@
 
           <base-heading
             size="text-h2"
-            title="WELCOME TO ZERO"
+            title="WELCOME TO CARBON+"
             weight="medium"
           />
+          <vue-typed-js
+            :strings="['First text', 'Second Text']"
+            :loop="true"
+            :type-speed="100"
+            :back-speed="30"
+            :back-delay="2500"
+          >
+            <h1 class="typing" />
+          </vue-typed-js>
 
           <base-body>
             <span class="white--text">CARBON+ is an online platform for technology exchange. It supports global efforts to address climate change by connecting providers and seekers of environmentally friendly technologies. Through its database, network and acceleration projects, it brings together key players to catalyze green technology innovation and diffusion.</span>
@@ -62,7 +71,7 @@
     },
 
     computed: {
-      minHeight () {
+      minHeight() {
         const height = this.$vuetify.breakpoint.mdAndUp ? '90vh' : '50vh'
 
         return `calc(${height} - ${this.$vuetify.application.top}px)`

@@ -15,8 +15,8 @@
       shaped
     >
       <v-list-item
-        v-for="name in items"
-        :key="name"
+        v-for="(name, i) in items"
+        :key="i"
         :to="{ name }"
         :exact="name === 'Home'"
         color="primary"
@@ -36,7 +36,7 @@
     props: {
       items: {
         type: Array,
-        default: () => ([]),
+        default: () => [],
       },
     },
   }

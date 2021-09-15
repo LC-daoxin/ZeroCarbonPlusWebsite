@@ -16,7 +16,7 @@
     mixins: [
       LoadSections([
         'hero',
-        'about-our-product',
+        'service-features',
         'features',
         'marketing',
         'theme-features',

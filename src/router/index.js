@@ -48,8 +48,8 @@ const router = new Router({
           meta: { src: require('@/assets/marketing.jpg') },
         },
         {
-          path: 'gallery',
-          name: 'Gallery',
+          path: 'podcasting',
+          name: 'Podcasting',
           component: () => import('@/views/gallery/Index.vue'),
           meta: { src: require('@/assets/gallery.jpg') },
         },
@@ -60,13 +60,13 @@ const router = new Router({
           meta: { src: require('@/assets/project.jpg') },
         },
         {
-          path: 'pricing-plans',
-          name: 'Pricing',
+          path: 'database',
+          name: 'Database',
           component: () => import('@/views/pricing-plans/Index.vue'),
           meta: { src: require('@/assets/pricing.jpg') },
         },
         {
-          path: 'contact-us',
+          path: 'contact',
           name: 'Contact',
           component: () => import('@/views/contact-us/Index.vue'),
           meta: { src: require('@/assets/contact.jpg') },
