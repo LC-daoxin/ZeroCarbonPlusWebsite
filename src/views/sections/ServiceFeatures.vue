@@ -2,11 +2,12 @@
   <base-section
     id="service-features"
     :background="background"
+    space="50"
   >
-    <base-section-heading
+    <!-- <base-section-heading
       icon="mdi-vuetify"
       title="About our Product"
-    />
+    /> -->
 
     <v-container>
       <v-row>
@@ -17,6 +18,7 @@
           md="4"
         >
           <base-details-card
+            aos-once
             data-aos="zoom-in"
             :data-aos-delay="card.delay"
             v-bind="card"
@@ -34,19 +36,21 @@
     data: () => ({
       cards: [
         {
-          title: 'Network',
+          title: '联合国气候大会',
           subtitle: 'Best Productivity',
           text: 'Similique sunt in culpa qui officia deserunt mollitia animi, id est laborut dolorum fuga.harum quidem rerum facilis estexpedita distinctio.',
           callout: '01',
           imgUrl: require('@/assets/infoImg-1.jpeg'),
+          to: { name: 'ZCP-Network' },
           delay: 100,
         },
         {
-          title: 'Global View',
-          subtitle: 'Special Offers',
-          text: 'Similique sunt in culpa qui officia deserunt mollitia animi, id est laborut dolorum fuga.harum quidem rerum facilis estexpedita distinctio.',
+          title: 'GLASGOW COP26',
+          subtitle: '31 OCT - 12 NOV 2021',
+          text: 'The COP26 summit will bring parties together to accelerate action towards the goals of the Paris Agreement and the UN Framework Convention on Climate Change.',
           callout: '02',
-          imgUrl: require('@/assets/infoImg-4.jpeg'),
+          imgUrl: require('@/assets/COV16.png'),
+          to: { name: 'Podcast' },
           delay: 200,
         },
         {

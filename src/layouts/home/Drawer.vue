@@ -15,14 +15,13 @@
       shaped
     >
       <v-list-item
-        v-for="(name, i) in items"
+        v-for="(item, i) in items"
         :key="i"
-        :to="{ name }"
-        :exact="name === 'Home'"
+        :to="item.src"
         color="primary"
       >
         <v-list-item-content>
-          <v-list-item-title v-text="name" />
+          <v-list-item-title v-text="item.name" />
         </v-list-item-content>
       </v-list-item>
     </v-list>

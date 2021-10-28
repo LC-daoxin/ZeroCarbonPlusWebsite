@@ -4,26 +4,26 @@
     space="36"
   >
     <v-container>
-      <base-section-heading title="Who's using Zero?" />
+      <base-section-heading :title="$t('home.title3')" />
 
       <v-slide-group>
-        <template v-for="n in 6">
+        <template v-for="(item, i) in list">
           <v-slide-item
-            :key="n"
+            :key="i"
             class="align-self-center"
           >
             <base-img
-              :src="require(`@/assets/logo-${n}-${$vuetify.theme.isDark ? 'dark' : 'light'}.png`)"
+              :src="item.img"
               color="grey"
               contain
-              height="40"
+              :height="item.height"
               width="128"
             />
           </v-slide-item>
 
           <v-responsive
-            v-if="n < 6"
-            :key="`divider-${n}`"
+            v-if="i < 3"
+            :key="`divider-${i}`"
             class="text-center"
             height="56"
             width="48"
@@ -39,5 +39,27 @@
 <script>
   export default {
     name: 'SectionAffiliates',
+    data() {
+      return {
+        list: [
+          {
+            img: require('@/assets/partner/1.png'),
+            height: 60,
+          },
+          {
+            img: require('@/assets/partner/2.svg'),
+            height: 60,
+          },
+          {
+            img: require('@/assets/partner/3.jpeg'),
+            height: 70,
+          },
+          {
+            img: require('@/assets/partner/4.png'),
+            height: 60,
+          },
+        ],
+      }
+    },
   }
 </script>

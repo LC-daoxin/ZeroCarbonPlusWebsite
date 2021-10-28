@@ -4,18 +4,28 @@
       <v-row justify="space-around">
         <v-hover v-slot="{ hover }">
           <v-card
-            :elevation="hover ? 10 : 2"
+            :elevation="hover ? 10 : 0"
             :class="{ 'on-hover': hover }"
             width="400"
           >
+            <router-link
+              v-if="to"
+              :to="to"
+            >
+              <v-img
+                height="200px"
+                :src="imgUrl"
+              />
+            </router-link>
             <v-img
+              v-else
               height="200px"
               :src="imgUrl"
             />
             <v-card-text>
               <v-col
                 v-if="title || subtitle"
-                :cols="callout ? 9 : 12"
+                :cols="12"
               >
                 <base-subtitle
                   v-if="subtitle"
@@ -34,7 +44,7 @@
                 <base-body
                   v-if="text || $slots.default"
                   :text="text"
-                  space="6"
+                  space="3"
                 >
                   <slot />
                 </base-body>
@@ -63,6 +73,7 @@
         type: String,
         default: 'primary',
       },
+      to: Object,
       icon: String,
       subtitle: String,
       text: String,
@@ -72,7 +83,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .v-card:not(.on-hover) {
   margin-top: 3px;
 }

@@ -3,7 +3,7 @@
     <router-link
       :to="{
         name: 'Article',
-        params: { slug: 'lorem-ipsum-dolor-sit-amet-consectetur' }
+        params: { info: '' }
       }"
       class="d-block"
     >

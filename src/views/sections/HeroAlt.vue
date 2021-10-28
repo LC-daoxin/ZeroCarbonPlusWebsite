@@ -1,9 +1,9 @@
 <template>
   <v-theme-provider dark>
     <section id="hero-alt">
+      <!-- :gradient="gradient" -->
       <base-img
-        :height="$vuetify.breakpoint.mdAndUp ? 350 : 225"
-        :gradient="gradient"
+        :height="$vuetify.breakpoint.mdAndUp ? 280 : 180"
         :src="src"
         color="#45516b"
         flat
@@ -17,22 +17,24 @@
           justify="center"
         >
           <v-col cols="12">
-            <base-heading
-              :title="title"
-              space="2"
-              weight="500"
-            />
+            <div class="title-bg">
+              <base-heading
+                :title="title"
+                space="2"
+                weight="500"
+              />
 
-            <base-divider
-              color="primary"
-              dense
-            />
+              <base-divider
+                color="primary"
+                dense
+              />
 
-            <v-breadcrumbs
-              :items="items"
-              class="justify-center pa-0"
-              divider=">"
-            />
+              <v-breadcrumbs
+                :items="items"
+                class="justify-center pa-0"
+                divider=">"
+              />
+            </div>
           </v-col>
         </v-row>
       </base-img>
@@ -42,17 +44,17 @@
 
 <script>
   // Components
-  import {
-    HexToRGBA,
-    RGBAtoCSS,
-  } from 'vuetify/lib/util/colorUtils'
+  import { HexToRGBA, RGBAtoCSS } from 'vuetify/lib/util/colorUtils'
 
   export default {
     name: 'SectionHeroAlt',
 
-    metaInfo () {
+    metaInfo() {
       return {
-        changed: meta => (this.title = meta.titleChunk.toUpperCase()),
+        changed: (meta) => {
+          const { i18n } = this.$route.meta
+          this.title = this.$t(i18n) // meta.titleChunk.toUpperCase()
+        },
       }
     },
 
@@ -63,29 +65,36 @@
     data: () => ({
       title: '',
     }),
-
     computed: {
-      gradient () {
+      gradient() {
         const color = `${this.$vuetify.theme.themes.light.secondary}CC`
         const overlay = RGBAtoCSS(HexToRGBA(color))
-
         return `to top, ${overlay}, ${overlay}`
       },
-      src () {
+      src() {
         return this.$route.meta.src
       },
-      items () {
-        return [
-          { text: 'HOME', to: '/' },
-          { text: this.title },
-        ]
+      items() {
+        return [{ text: this.$t('home.text'), to: '/' }, { text: this.title }]
+      },
+    },
+    watch: {
+      '$i18n.locale'(newValue) {
+        const { i18n } = this.$route.meta
+        this.title = this.$t(i18n)
       },
     },
   }
 </script>
 
 <style lang="sass">
-  #hero-alt
-    .v-breadcrumbs__item
-      color: #FFFFFF
+#hero-alt
+  .v-breadcrumbs__item
+    color: #FFFFFF
+  .title-bg
+    margin: 0 auto
+    padding: 20px 0
+    width: 500px
+    overflow: hidden
+    background: linear-gradient(to top, rgba(5, 11, 31, 0.4), rgba(5, 11, 31, 0.4))
 </style>

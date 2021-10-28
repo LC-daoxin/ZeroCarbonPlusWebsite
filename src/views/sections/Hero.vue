@@ -15,15 +15,15 @@
         >
           <base-subheading
             weight="regular"
-            title="WE LOVE MAKING THINGS SIMPLE AND AMAZING"
+            :title="$t('home.title1')"
           />
 
           <base-heading
-            size="text-h2"
-            title="WELCOME TO CARBON+"
+            size="text-h3"
+            :title="$t('home.title')"
             weight="medium"
           />
-          <vue-typed-js
+          <!-- <vue-typed-js
             :strings="['First text', 'Second Text']"
             :loop="true"
             :type-speed="100"
@@ -31,30 +31,45 @@
             :back-delay="2500"
           >
             <h1 class="typing" />
-          </vue-typed-js>
+          </vue-typed-js> -->
 
           <base-body>
-            <span class="white--text">CARBON+ is an online platform for technology exchange. It supports global efforts to address climate change by connecting providers and seekers of environmentally friendly technologies. Through its database, network and acceleration projects, it brings together key players to catalyze green technology innovation and diffusion.</span>
+            <span class="white--text">{{ $t('home.content') }}</span>
           </base-body>
 
           <div
             :class="$vuetify.breakpoint.smAndDown ? 'flex-column align-start' : 'align-center'"
             class="d-flex flex-wrap"
           >
-            <base-btn>
-              Discover More
-            </base-btn>
-
+            <!-- <router-link :to="{name: 'About'}">
+            </router-link> -->
+            <a href="#about">
+              <base-btn>
+                {{ $t('about.text') }}
+              </base-btn>
+            </a>
             <span class="font-weight-bold ml-6 mr-4 my-4">or</span>
 
-            <base-btn
-              :ripple="false"
-              class="pa-1"
-              height="auto"
-              text
-            >
-              Get Started Now
-            </base-btn>
+            <v-hover v-slot="{ hover }">
+              <router-link
+                :class="{ 'noline': !hover }"
+                :to="{name: 'Contact'}"
+              >
+                <base-btn
+                  :ripple="false"
+                  height="auto"
+                  :min-width="96"
+                  text
+                >
+                  <span :class="{ 'white--text': !hover }">{{ $t('contact.title') }}</span>
+                  <v-icon
+                    :color="hover ? 'primary' : 'white'"
+                  >
+                    {{ icon.right }}
+                  </v-icon>
+                </base-btn>
+              </router-link>
+            </v-hover>
           </div>
         </v-responsive>
       </v-container>
@@ -63,19 +78,29 @@
 </template>
 
 <script>
+  import { mdiChevronRight } from '@mdi/js'
   export default {
     name: 'SectionHero',
 
     provide: {
       theme: { isDark: true },
     },
-
+    data() {
+      return {
+        icon: {
+          right: mdiChevronRight,
+        },
+      }
+    },
     computed: {
       minHeight() {
-        const height = this.$vuetify.breakpoint.mdAndUp ? '90vh' : '50vh'
-
+        const height = this.$vuetify.breakpoint.mdAndUp ? '40vh' : '32vh'
         return `calc(${height} - ${this.$vuetify.application.top}px)`
       },
     },
   }
 </script>
+<style lang="sass" scoped>
+.noline
+  text-decoration: none
+</style>

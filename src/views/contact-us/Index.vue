@@ -16,8 +16,8 @@
       LoadSections([
         'hero-alt',
         'keep-in-touch',
-        'map',
-        'newsletter-alt',
+        // 'map',
+        // 'newsletter-alt',
       ]),
     ],
 

@@ -7,7 +7,9 @@
       fluid
       class="py-0"
     >
-      <v-row>
+      <v-row
+        justify="center"
+      >
         <v-col
           class="extra-padding"
           cols="12"
@@ -31,7 +33,7 @@
           </v-responsive>
         </v-col>
 
-        <v-col
+        <!-- <v-col
           class="secondary d-flex flex-wrap child-flex"
           cols="12"
           md="4"
@@ -42,7 +44,7 @@
             :value="value"
             fill
           />
-        </v-col>
+        </v-col> -->
 
         <v-col
           class="extra-padding"

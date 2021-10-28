@@ -5,7 +5,7 @@
       app
       elevation="1"
       elevate-on-scroll
-      height="72"
+      height="56"
     >
       <base-img
         :src="require('@/assets/logo_black.png')"
@@ -25,7 +25,7 @@
 
       <v-spacer />
 
-      <div>
+      <div class="d-flex">
         <v-tabs
           class="hidden-sm-and-down"
           optional
@@ -36,13 +36,69 @@
             :key="i"
             :to="item.src"
             :ripple="false"
-            class="font-weight-bold"
+            class="font-weight-bold btnHover"
             min-width="96"
             text
           >
-            {{ item.name }}
+            {{ $t(item.i18n) }}
           </v-tab>
         </v-tabs>
+        <div class="d-flex align-center">
+          <v-menu
+            transition="slide-y-transition"
+            open-on-hover
+            bottom
+            offset-y
+          >
+            <template #activator="{ on, attrs }">
+              <v-btn
+                text
+                color="title"
+                class="btnHover"
+                v-bind="attrs"
+                v-on="on"
+              >
+                <v-icon>
+                  {{ icon.translate }}
+                </v-icon>
+                <v-icon small>
+                  {{ icon.down }}
+                </v-icon>
+              </v-btn>
+            </template>
+            <v-list
+              nav
+              dense
+            >
+              <v-list-item-group
+                v-model="langSelected"
+                color="title"
+              >
+                <v-list-item
+                  v-for="(item, i) in languages"
+                  :key="i"
+                  @click="changeLang(item.lang)"
+                >
+                  <v-list-item-content>
+                    <v-list-item-title v-text="item.text" />
+                  </v-list-item-content>
+                </v-list-item>
+              </v-list-item-group>
+            </v-list>
+          </v-menu>
+        </div>
+        <!-- <div class="d-flex align-center">
+          <v-btn
+            text
+            to="/login"
+            class="btnHover"
+            color="title"
+          >
+            <v-icon>
+              {{ icon.login }}
+            </v-icon>
+          </v-btn>
+        </div> -->
       </div>
 
       <v-app-bar-nav-icon
@@ -59,6 +115,7 @@
 </template>
 
 <script>
+  import { mdiTranslate, mdiChevronDown, mdiLogin } from '@mdi/js'
   export default {
     name: 'HomeAppBar',
 
@@ -68,33 +125,65 @@
 
     data: () => ({
       drawer: null,
+      icon: {
+        translate: mdiTranslate,
+        down: mdiChevronDown,
+        login: mdiLogin,
+      },
       items: [
         {
           name: 'Home',
+          i18n: 'home.text',
           src: '/',
         },
+        // {
+        //   name: 'About Us',
+        //   i18n: 'about.text',
+        //   src: '/about',
+        // },
         {
-          name: 'About Us',
-          src: 'About',
+          name: 'ZCP Network',
+          i18n: 'zcp.text',
+          src: '/ZCP-Network',
         },
+        // {
+        //   name: 'Database',
+        //   src: '/database',
+        // },
         {
-          name: 'Database',
-          src: 'Database',
+          name: 'Podcast',
+          i18n: 'podcast.text',
+          src: '/podcast',
         },
-        {
-          name: 'Podcasting',
-          src: 'Podcasting',
-        },
-        {
-          name: 'News',
-          src: 'News',
-        },
+        // {
+        //   name: 'News',
+        //   i18n: 'news.text',
+        //   src: '/news',
+        // },
         {
           name: 'Contact',
-          src: 'Contact',
+          i18n: 'contact.text',
+          src: '/contact',
+        },
+      ],
+      langSelected: 0,
+      languages: [
+        {
+          lang: 'en',
+          text: 'English',
+        },
+        {
+          lang: 'zh',
+          text: '简体中文',
         },
       ],
     }),
+
+    methods: {
+      changeLang(lang) {
+        this.$i18n.locale = lang
+      },
+    },
   }
 </script>
 
@@ -107,4 +196,6 @@
     .v-tab
       &::before
         display: none
+  .btnHover:hover
+    background: rgba(0, 0, 0, 0.08)
 </style>

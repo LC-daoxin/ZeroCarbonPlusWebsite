@@ -12,7 +12,7 @@
 
     <div
       v-if="text"
-      class="text-subtitle-1"
+      :class="className ? className : 'text-subtitle-1'"
       v-text="text"
     />
   </div>
@@ -32,6 +32,7 @@
         default: 'mdi-check-circle-outline',
       },
       text: String,
+      className: String,
     },
   }
 </script>

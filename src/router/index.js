@@ -15,6 +15,11 @@ const router = new Router({
   },
   routes: [
     {
+      path: '/login',
+      name: 'Login',
+      component: () => import('@/views/login/Index.vue'),
+    },
+    {
       path: '/',
       component: () => import('@/layouts/home/Index.vue'),
       children: [
@@ -28,6 +33,15 @@ const router = new Router({
           name: 'About',
           component: () => import('@/views/about/Index.vue'),
           meta: { src: require('@/assets/about.jpg') },
+        },
+        {
+          path: 'ZCP-Network',
+          name: 'ZCP-Network',
+          component: () => import('@/views/ZCP-network/Index.vue'),
+          meta: {
+            src: require('@/assets/about.jpg'),
+            i18n: 'zcp.title',
+          },
         },
         {
           path: 'news',
@@ -48,15 +62,18 @@ const router = new Router({
           meta: { src: require('@/assets/marketing.jpg') },
         },
         {
-          path: 'podcasting',
-          name: 'Podcasting',
-          component: () => import('@/views/gallery/Index.vue'),
-          meta: { src: require('@/assets/gallery.jpg') },
+          path: 'podcast',
+          name: 'Podcast',
+          component: () => import('@/views/podcast/Index.vue'),
+          meta: {
+            src: require('@/assets/podcasts/podcast-bg2.jpeg'),
+            i18n: 'podcast.title',
+          },
         },
         {
           path: 'gallery/:project',
           name: 'Project',
-          component: () => import('@/views/gallery/Project.vue'),
+          component: () => import('@/views/podcast/Project.vue'),
           meta: { src: require('@/assets/project.jpg') },
         },
         {
@@ -69,7 +86,10 @@ const router = new Router({
           path: 'contact',
           name: 'Contact',
           component: () => import('@/views/contact-us/Index.vue'),
-          meta: { src: require('@/assets/contact.jpg') },
+          meta: {
+            src: require('@/assets/contact.jpg'),
+            i18n: 'contact.title',
+          },
         },
         {
           path: 'pro',

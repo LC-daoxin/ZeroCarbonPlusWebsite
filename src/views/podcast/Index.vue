@@ -6,18 +6,16 @@
   import LoadSections from '@/mixins/load-sections'
 
   export default {
-    name: 'Gallery',
+    name: 'Podcast',
 
-    metaInfo: { title: 'Gallery' },
+    metaInfo: { title: 'Podcast' },
 
     extends: View,
 
     mixins: [
       LoadSections([
         'hero-alt',
-        'gallery',
-        'newsletter',
-        'info-alt',
+        'podcast-alt',
       ]),
     ],
 

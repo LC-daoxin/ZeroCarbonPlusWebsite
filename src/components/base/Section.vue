@@ -15,9 +15,7 @@
 
   export default {
     name: 'BaseSection',
-
     mixins: [Measurable],
-
     props: {
       space: {
         type: [Number, String],
@@ -37,13 +35,10 @@
         }
         if (this.background) {
           style.background = `url(${this.background}) no-repeat top left`
-          style.backgroundSize = '2000px 1000px'
+          style.backgroundSize = '2000px 900px'
         }
         return style
       },
-    },
-    mounted() {
-      console.log(this.background)
     },
   }
 </script>

@@ -17,7 +17,7 @@
         'hero-alt',
         'news-alt',
         'newsletter',
-        'info-alt',
+        // 'info-alt',
       ]),
     ],
 
