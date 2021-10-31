@@ -15,7 +15,7 @@
     mixins: [
       LoadSections([
         'hero-alt',
-        'keep-in-touch',
+        'keep-in-touch-new',
         // 'map',
         // 'newsletter-alt',
       ]),

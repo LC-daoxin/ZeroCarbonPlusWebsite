@@ -5,7 +5,7 @@
       :label="$t('podcast.search')"
     />
 
-    <base-info-card title="About Us">
+    <base-info-card :title="$t('about.text')">
       <base-img
         :src="require('@/assets/podcasts/podcast-logo.jpg')"
         class="mb-2"
@@ -15,8 +15,18 @@
       />
 
       <base-body>
-        <div>简介：谈气候正义谈青年机会</div>
-        <div>谈职业发展「弹走碳碳碳」</div>
+        <div>{{ $t('podcast.content1') }}</div>
+        <div>
+          {{ $t('podcast.content2') }}
+          <a
+            v-if="$i18n.locale == 'en'"
+            href="mailto:podcast@2030climateplus.cn"
+          >podcast@2030climateplus.cn</a>
+          <a
+            v-else
+            href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=podcast@2030climateplus.cn"
+          >podcast@2030climateplus.cn</a>
+        </div>
       </base-body>
     </base-info-card>
   </div>

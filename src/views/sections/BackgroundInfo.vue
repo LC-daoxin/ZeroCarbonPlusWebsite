@@ -8,11 +8,11 @@
         >
           <base-section-heading
             align="left"
-            subtitle="Background Information"
+            :subtitle="$t('zcp.subtitle')"
             tag="h2"
-            title="Background"
+            :title="$t('zcp.title1')"
           >
-            Climate change and the impact of relevant policy/regulations regarding carbon neutrality bring challenges and opportunities for various stakeholders including enterprises, NGOs and local governments. Diverse demands have thus emerged, requiring tailored solutions for adaptation, transfer and innovation such as
+            {{ $t('zcp.content1') }}
           </base-section-heading>
 
           <v-row>
@@ -35,7 +35,7 @@
 
                 <v-responsive>
                   <base-subtitle
-                    :title="title"
+                    :title="$t(title)"
                     size="42"
                     class="text--primary"
                   />
@@ -48,13 +48,13 @@
               class="px-12 mt-5"
               space="5"
             >
-              Currently, however, as the environment changes, regulations evolve, new technologies emerge, and customer behavior shifts, the crux facing both the public and private sector lies in the effective and efficient match between the problem solvers and the issuers seeking the optimal solutions  — and whether the offered proposals could truly work in the end.
+              {{ $t('zcp.content2') }}
             </base-body>
             <base-body
               class="px-12"
               space="5"
             >
-              Without reliable navigation, relevant players may be exposed to huge gaps in terms of climate-related risks and opportunities at the cost of wasted investment and invalid communications, ultimately resulting in a more bumpy transition to a low-carbon economy at the state level.
+              {{ $t('zcp.content3') }}
             </base-body>
           </v-row>
         </v-col>
@@ -67,21 +67,21 @@
           <base-img
             class="img-1"
             data-aos="fade-left"
-            :src="require('@/assets/infoImg-5.jpeg')"
+            :src="require('@/assets/infoImg-5.jpg')"
             contain
             max-width="90%"
           />
           <base-img
             class="img-2"
             data-aos="fade-left"
-            :src="require('@/assets/infoImg-2.jpeg')"
+            :src="require('@/assets/infoImg-2.jpg')"
             contain
             max-width="90%"
           />
           <base-img
             class="img-3"
             data-aos="fade-left"
-            :src="require('@/assets/infoImg-1.jpeg')"
+            :src="require('@/assets/infoImg-1.jpg')"
             contain
             max-width="90%"
           />
@@ -100,15 +100,15 @@
       features: [
         [
           mdiAtom,
-          'Restructuring the business in fitting the mitigation needs',
+          'zcp.point4',
         ],
         [
           mdiChartScatterPlotHexbin,
-          'Upgrading operation capacity towards a more sustainable end',
+          'zcp.point5',
         ],
         [
           mdiBasketUnfill,
-          'Renewing and breaking the threshold of tech gaps',
+          'zcp.point6',
         ],
       ],
     }),

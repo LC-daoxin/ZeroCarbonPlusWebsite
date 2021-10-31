@@ -34,55 +34,110 @@
         const globalMap = [
           {
             name: this.$t('city.beijing'),
-            value: [116.28, 39.54, 10],
+            value: [116.28, 39.54, 7],
           },
           {
             name: this.$t('city.shanghai'),
-            value: [121.4648, 31.2891, 7],
+            value: [121.4648, 31.2891, 4],
           },
           {
-            name: '香港',
-            value: [114.195466, 22.282751, 7],
+            name: this.$t('city.hongkong'),
+            value: [114.195466, 22.282751, 4],
           },
           {
-            name: '纽黑文',
-            value: [-72.32802, 41.90932, 7], // [-72.92802, 41.30932, 7], 真实坐标
+            name: this.$t('city.newhaven'),
+            value: [-72.32802, 41.90932, 4], // [-72.92802, 41.30932, 7], 真实坐标
+            label: {
+              normal: {
+                show: true,
+                position: 'left', // 显示位置
+                offset: [-5, -2], // 偏移设置
+                formatter: '{b}', // 圆环显示文字
+              },
+              emphasis: {
+                show: true,
+              },
+            },
           },
           {
-            name: '巴尔的摩',
-            value: [-77.67, 38.57, 7], // [-76.37, 39.17, 7], 真实坐标
+            name: this.$t('city.baltimore'),
+            value: [-76.37, 39.17, 4],
+            label: {
+              normal: {
+                show: true,
+                position: 'right', // 显示位置
+                offset: [-2, 7], // 偏移设置
+                formatter: '{b}', // 圆环显示文字
+              },
+              emphasis: {
+                show: true,
+              },
+            },
           },
           {
-            name: '纽约',
-            value: [-74.0059731, 40.7143528, 7],
+            name: this.$t('city.newyork'),
+            value: [-74.0059731, 40.7143528, 4],
           },
           {
             name: this.$t('city.puchong'),
-            value: [101.42, 3.08, 7],
+            value: [101.42, 3.08, 4],
           },
           {
-            name: '斯德哥尔摩',
-            value: [18, 59.23, 7],
+            name: this.$t('city.stockholm'),
+            value: [18, 59.23, 4],
           },
           {
-            name: '阿姆斯特丹',
-            value: [4.52, 52.21, 7],
+            name: this.$t('city.amsterdam'),
+            value: [4.52, 52.21, 4],
           },
           {
-            name: '克拉科夫',
-            value: [19.55, 50.03, 7],
+            name: this.$t('city.krakow'),
+            value: [19.55, 50.03, 4],
           },
           {
-            name: '约克',
-            value: [-1.05339, 53.94494, 7],
+            name: this.$t('city.york'),
+            value: [-1.05339, 53.94494, 4],
+            label: {
+              normal: {
+                show: true,
+                position: 'right', // 显示位置
+                offset: [0, -5], // 偏移设置
+                formatter: '{b}', // 圆环显示文字
+              },
+              emphasis: {
+                show: true,
+              },
+            },
           },
           {
-            name: '剑桥',
-            value: [0.071854, 52.121921, 7],
+            name: this.$t('city.cambridge'),
+            value: [0.071854, 52.121921, 4],
+            label: {
+              normal: {
+                show: true,
+                position: 'left', // 显示位置
+                offset: [0, -5], // 偏移设置
+                formatter: '{b}', // 圆环显示文字
+              },
+              emphasis: {
+                show: true,
+              },
+            },
           },
           {
-            name: '伦敦',
-            value: [0.15, 51.3, 7],
+            name: this.$t('city.london'),
+            value: [-1.15, 51.3, 5], // [0.15, 51.3, 7],
+            label: {
+              normal: {
+                show: true,
+                position: 'right', // 显示位置
+                offset: [-2, 6], // 偏移设置
+                formatter: '{b}', // 圆环显示文字
+              },
+              emphasis: {
+                show: true,
+              },
+            },
           },
         ]
         // const that = this

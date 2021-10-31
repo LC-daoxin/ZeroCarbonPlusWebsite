@@ -32,7 +32,7 @@
     <base-body
       v-if="$slots.default || text"
       class="mx-auto"
-      max-width="700"
+      max-width="750"
     >
       <slot v-if="$slots.default" />
 

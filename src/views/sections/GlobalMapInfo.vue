@@ -22,11 +22,11 @@
             <div>
               <base-title
                 :space="$vuetify.breakpoint.mdAndUp ? 0 : 4"
-                title="Members Of The Distribution"
+                :title="$t('zcp.title4')"
               />
               <base-body space="0">
                 <span class="white--text">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor itaque modi ab accusantium architecto voluptates ipsa molestiae.
+                  {{ $t('zcp.content6') }}
                 </span>
               </base-body>
             </div>

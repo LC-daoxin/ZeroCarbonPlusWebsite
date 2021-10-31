@@ -12,29 +12,41 @@
               v-if="to"
               :to="to"
             >
-              <v-img
-                height="200px"
+              <div
+                class="d-flex justify-center"
+                :style="{ 'background': background }"
+              >
+                <img
+                  :src="imgUrl"
+                  height="200"
+                >
+              </div>
+              <!-- <v-img
+                content-class="h-img"
+                height="240"
+                aspect-ratio="1.7"
                 :src="imgUrl"
-              />
+              /> -->
             </router-link>
             <v-img
               v-else
-              height="200px"
+              height="240"
+              contain
               :src="imgUrl"
             />
             <v-card-text>
               <v-col
-                v-if="title || subtitle"
+                v-if="title1 || subtitle1"
                 :cols="12"
               >
                 <base-subtitle
-                  v-if="subtitle"
-                  :title="subtitle"
+                  v-if="subtitle1"
+                  :title="$i18n.locale == 'en' ? subtitle1 : subtitle2"
                   space="1"
                 />
 
                 <base-title
-                  :title="title"
+                  :title="$i18n.locale == 'en' ? title1 : title2"
                   class="text-uppercase"
                   space="1"
                 />
@@ -42,8 +54,8 @@
                 <base-divider :color="color" />
 
                 <base-body
-                  v-if="text || $slots.default"
-                  :text="text"
+                  v-if="text1 || $slots.default"
+                  :text="$i18n.locale == 'en' ? text1 : text2"
                   space="3"
                 >
                   <slot />
@@ -75,16 +87,19 @@
       },
       to: Object,
       icon: String,
-      subtitle: String,
-      text: String,
-      title: String,
+      subtitle1: String,
+      subtitle2: String,
+      background: String,
+      text1: String,
+      text2: String,
+      title1: String,
+      title2: String,
       imgUrl: String,
     },
   }
 </script>
 
-<style lang="scss" scoped>
-.v-card:not(.on-hover) {
-  margin-top: 3px;
-}
+<style lang="sass" scoped>
+.v-card:not(.on-hover)
+  margin-top: 3px
 </style>

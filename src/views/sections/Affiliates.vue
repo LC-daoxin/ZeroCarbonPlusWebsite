@@ -51,7 +51,7 @@
             height: 60,
           },
           {
-            img: require('@/assets/partner/3.jpeg'),
+            img: require('@/assets/partner/3.png'),
             height: 70,
           },
           {

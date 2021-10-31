@@ -21,9 +21,9 @@
         <v-list>
           <v-list-item>
             <v-list-item-content>
-              <v-list-item-title>{{ currentTrack.title }}</v-list-item-title>
+              <v-list-item-title>{{ $i18n.locale == 'zh' ? currentTrack.title2 : currentTrack.title1 }}</v-list-item-title>
               <v-list-item-subtitle class="subtitle">
-                {{ currentTrack.anchorName }} {{ seek | minutes }}/{{ currentTrack.howl.duration() | minutes }}
+                {{ $i18n.locale == 'en' ? currentTrack.anchorName1 : currentTrack.anchorName2 }} {{ seek | minutes }}/{{ currentTrack.howl.duration() | minutes }}
               </v-list-item-subtitle>
             </v-list-item-content>
 

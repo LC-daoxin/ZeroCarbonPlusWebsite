@@ -1,13 +1,13 @@
 <template>
   <v-footer
     id="home-footer"
-    color="black"
+    color="#282828"
     dark
     min-height="72"
   >
     <v-container>
       <v-row>
-        <v-col
+        <!-- <v-col
           cols="12"
           md="6"
         >
@@ -30,14 +30,13 @@
               </v-responsive>
             </template>
           </div>
-        </v-col>
+        </v-col> -->
 
         <v-col
-          class="text-center text-md-right"
+          class="text-center text-md-center"
           cols="12"
-          md="6"
         >
-          Copyright &copy; 2020 Vuetify, LLC
+          &copy; 2021 {{ $t('home.footer') }}
         </v-col>
       </v-row>
     </v-container>

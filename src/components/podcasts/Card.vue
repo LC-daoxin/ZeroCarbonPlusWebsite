@@ -13,6 +13,7 @@
             <base-img
               :src="src"
               height="160px"
+              :contain="contain"
               flat
               tile
             >
@@ -20,22 +21,27 @@
                 <v-sheet
                   class="img-tag ma-2 rounded d-inline-flex align-center justify-center"
                   color="amber accent-4"
+                  elevation="5"
                   dark
                   tile
                 >
                   <span class="text">{{ podcastTypeText }}</span>
                 </v-sheet>
-                <v-sheet
-                  class="pa-2 play-btn d-inline-flex align-center justify-center"
-                  color="primary"
-                  dark
-                  tile
-                  height="40"
-                  width="40"
-                  @click="$emit('play', id)"
-                >
-                  <v-icon v-text="howl ? howl.playing() ? 'mdi-pause' : icon : icon" />
-                </v-sheet>
+                <v-hover v-slot="{ hover }">
+                  <v-sheet
+                    class="pa-2 play-btn d-inline-flex align-center justify-center"
+                    :class="{ 'point': hover }"
+                    :elevation="hover ? 5 : 0"
+                    :color="hover ? '#1a5f97' : 'primary'"
+                    dark
+                    tile
+                    height="40"
+                    width="40"
+                    @click="$emit('play', id)"
+                  >
+                    <v-icon v-text="howl ? howl.playing() ? 'mdi-pause' : icon : icon" />
+                  </v-sheet>
+                </v-hover>
               </div>
             </base-img>
           </v-col>
@@ -51,9 +57,9 @@
                 target="_blank"
                 class="d-block no-line"
               >
-                <h5 class="card-title">{{ title }}</h5>
+                <h5 class="card-title">{{ $i18n.locale == 'en' ? title1 : title2 }}</h5>
               </a>
-              <p class="card-text">
+              <p class="card-text mb-0">
                 {{ truncatedText }}
               </p>
               <div class="card-footer">
@@ -67,14 +73,20 @@
                 </div>
                 <div class="footer_right">
                   <div class="right_0">
-                    {{ anchorName }}
+                    {{ $i18n.locale == 'en' ? anchorName1 : anchorName2 }}
                   </div>
-                  <div class="right_1">
+                  <div class="right_1 d-flex align-center">
                     <div class="date">
                       {{ date }}
                     </div>
-                    <div class="browse">
-                      1250 浏览
+                    <div class="browse d-flex justify-center align-center">
+                      {{ previewNum }}
+                      <v-icon
+                        class="ml-2"
+                        size="14"
+                      >
+                        {{ see }}
+                      </v-icon>
                     </div>
                   </div>
                 </div>
@@ -88,6 +100,7 @@
 </template>
 
 <script>
+  import { mdiEye } from '@mdi/js'
   export default {
     name: 'PodcastCard',
     props: {
@@ -96,41 +109,73 @@
       comments: [Number, String],
       date: String,
       divider: Boolean,
+      contain: Boolean,
       html: String,
       icon: String,
       prominent: Boolean,
       readMore: Boolean,
       podcastType: Number,
-      anchorName: String,
+      anchorName1: String,
+      anchorName2: String,
       anchorImg: String,
       audio: String,
       howl: Object,
       src: String,
       to: String,
-      text: String,
-      title: String,
+      text1: String,
+      text2: String,
+      title1: String,
+      title2: String,
+      previewNum: {
+        type: Number,
+        default: 0,
+      },
       truncate: {
         type: [Number, String],
-        default: 70,
+        default: 200,
       },
     },
-
+    data() {
+      return {
+        see: mdiEye,
+      }
+    },
     computed: {
       truncatedText() {
-        if (!this.text) return ''
+        const text = this.$i18n.locale === 'en' ? this.text1 : this.text2
+        if (!text) return ''
 
-        const truncate = Number(this.truncate)
-
-        return this.text.length > truncate
-          ? this.text.slice(0, truncate) + '...'
-          : this.text
+        // const truncate = Number(this.truncate)
+        // console.log(this.$vuetify.breakpoint.name)
+        let num = 0
+        if (this.$i18n.locale === 'zh') {
+          num = 150
+        } else {
+          num = 200
+        }
+        return text.length > num ? text.slice(0, num) + '...' : text
       },
       podcastTypeText() {
+        const v = this.$i18n.locale
         const s = {
-          1: '就业',
-          2: '零碳消费',
+          1: {
+            zh: 'COP26 直击格拉斯哥',
+            en: 'COP26 Glasgow Live',
+          },
+          2: {
+            zh: '0碳风口已至',
+            en: 'Green Employment',
+          },
+          3: {
+            zh: '0碳怎么消费',
+            en: 'Green Consumption',
+          },
+          4: {
+            zh: '特辑',
+            en: 'Special Issue ',
+          },
         }
-        return s[this.podcastType]
+        return s[this.podcastType][v]
       },
     },
     methods: {},
@@ -146,6 +191,8 @@
   position: absolute
   right: 0
   bottom: 0
+.point
+  cursor: pointer
 .no-line
   text-decoration: none
 .card-content
@@ -154,7 +201,8 @@
   flex-direction: column
   justify-content: space-between
   .card-title
-    font-size: 20px
+    font-size: 19px
+    line-height: 22px
     font-weight: bold
     color: rgba(0,0,0,.84)
     &:hover
@@ -163,7 +211,7 @@
     flex: 1 1 auto
     margin-top: 5px
     font-size: 14px
-    line-height: 22px
+    line-height: 18px
     color: rgba(0,0,0,.6)
   .card-footer
     display: flex

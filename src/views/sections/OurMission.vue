@@ -10,22 +10,22 @@
         >
           <base-section-heading
             align="left"
-            subtitle="Zero Carbon Plus Network"
+            :subtitle="$t('zcp.subtitle')"
             tag="h2"
-            title="Our Mission"
+            :title="$t('zcp.title2')"
           />
           <v-row>
             <base-body
               class="px-12 mt-5"
               space="5"
             >
-              We are committed to establishing a pioneering global network for convergence of multi-front effort in response to climate change. Positioned as an intelligent match-maker of climate-related targets and solutions, we are building a first-in-kind information hub aggregating cutting-edge technological innovations, up-to-date research-based applications and industry solutions underpinned by top notch scholars, consultancies and think tanks.
+              {{ $t('zcp.content4') }}
             </base-body>
             <base-body
               class="px-12"
               space="5"
             >
-              Through indepth exchanges and tailored consultation, the Network aims to connect providers and seekers of localized climate-related solutions in such fields as carbon strategy planning, climate finance management and green technology breakthrough to help speed up the development, transfer and upgrading of enterprises and organizations towards a more sustainable trajectory.
+              {{ $t('zcp.content5') }}
             </base-body>
           </v-row>
         </v-col>

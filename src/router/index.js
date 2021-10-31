@@ -92,6 +92,12 @@ const router = new Router({
           },
         },
         {
+          path: 'survey',
+          name: 'Survey',
+          component: () => import('@/views/ZCP-network/Survey.vue'),
+          meta: { src: require('@/assets/pro.jpg') },
+        },
+        {
           path: 'pro',
           name: 'Pro',
           component: () => import('@/views/pro/Index.vue'),

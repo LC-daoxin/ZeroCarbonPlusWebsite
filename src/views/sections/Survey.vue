@@ -15,16 +15,16 @@
         >
           <v-responsive>
             <base-info-card
-              subtitle="Monthly Status"
-              title="SURVEY"
+              :subtitle="$t('zcp.subtitle')"
+              :title="$t('zcp.title3')"
               color="grey lighten-4"
             />
 
             <base-body>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, impedit hic, porro numquam ipsum iste, earum adipisci dignissimos sapiente cupiditate veritatis consequatur eaque culpa enim nesciunt esse tempora iusto in?
+              {{ $t('zcp.content7') }}
             </base-body>
 
-            <base-btn>
+            <base-btn :to="{ name: 'Survey' }">
               <v-icon class="mr-1">
                 {{ icon }}
               </v-icon>

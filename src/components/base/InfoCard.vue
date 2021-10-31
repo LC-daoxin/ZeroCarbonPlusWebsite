@@ -29,6 +29,7 @@
           <base-title
             :title="title"
             class="text-uppercase"
+            :size="size"
             space="1"
           />
 
@@ -77,6 +78,10 @@
       subtitle: String,
       text: String,
       title: String,
+      size: {
+        type: String,
+        default: 'text-h6',
+      },
     },
   }
 </script>

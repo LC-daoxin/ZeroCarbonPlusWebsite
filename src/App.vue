@@ -9,7 +9,7 @@
     name: 'App',
     metaInfo: {
       title: 'App',
-      titleTemplate: '%s | CARBON+',
+      titleTemplate: '%s | Zero Carbon Plus Technology',
       htmlAttrs: { lang: 'en' },
       meta: [
         { charset: 'utf-8' },
